@@ -1,2 +1,2 @@
 
-Teste, verificando se jenkins irá executar script após commit.
+Novo teste, verificando se jenkins irá executar script após commit.
