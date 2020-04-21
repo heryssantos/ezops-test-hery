@@ -24,8 +24,8 @@ describe('GET /messages', function () {
 
 describe('POST /messages', function () {
     let data = {
-        "name": "Supertest62289189a322a00956557815fbd3b80d",
-        "message": "62289189a322a00956557815fbd3b80d",
+        "name": "",
+        "message": "",
     }
     it('respond with 200 OK', function (done) {
         this.timeout(30000);
