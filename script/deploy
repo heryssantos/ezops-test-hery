@@ -1,5 +1,5 @@
 #!/bin/sh
-ssh ubuntu@ec2-18-217-129-225.us-east-2.compute.amazonaws.com -i ~/.ssh/ec2_hery_rsa.pem<<EOF
+ssh ubuntu@ec2-18-217-129-225.us-east-2.compute.amazonaws.com -i /home/ubuntu/.ssh/ec2_hery_rsa.pem<<EOF
  cd /home/ubuntu/ezops-test-hery
  git pull
  npm install -- production
