@@ -1,3 +1,10 @@
-FROM node:10-slim
+FROM node:10-slim AS node-image
 WORKDIR /home/node/app
-CMD npm start
+
+COPY package*.json ./
+RUN npm install
+
+COPY . .
+
+EXPOSE 3000
+CMD [ "node", "server.js" ]
