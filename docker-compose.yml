@@ -8,3 +8,24 @@ services:
       - ./:/home/node/app
     ports:
       - "3000:3000"
+    networks:
+      - backend
+
+  nginx:
+    build:
+      context: .
+      dockerfile: dockerfile-nginx
+    container_name: nginx-container
+    restart: always
+    volumes:
+      - ./default.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - "80:80"
+    networks:
+      - backend
+    links:
+      - "node:server"
+
+networks:
+  backend:
+    driver: "bridge"
