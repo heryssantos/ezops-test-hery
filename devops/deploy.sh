@@ -1,10 +1,26 @@
 #!/bin/sh
-echo "Pulling repository"
-#git pull
-echo "Testing ..."
-bash test
-echo "Stoping container"
-docker container stop node-container
-echo "Removing container"
-docker container rm node-container
-docker-compose up -d node
+cd /home/ubuntu/ezops-test-hery
+
+# GET FILES IN DEVOPS FOLDER
+DEVOPS_FILES=$(ls -ap devops | grep -v /) # This command list all não directories inside the folder "ls -ap devops | grep -v /"
+DEVOPS_FILES=${DEVOPS_FILES#*..} #remove current and parent directory
+echo "Devops files: ${DEVOPS_FILES}"
+
+# moving files from devops
+for i in ${DEVOPS_FILES} ; do
+    echo "moving $i."
+    mv devops/$i $i
+done
+
+# allow deploy script to execute
+chmod +x build.sh
+
+# execute deploy
+bash test.sh
+bash build.sh
+
+#moving back to devops
+for i in ${DEVOPS_FILES} ; do
+    echo "moving $i back to devops."
+    mv $i devops/$i
+done
