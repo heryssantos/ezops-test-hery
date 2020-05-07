@@ -1,5 +1,5 @@
 #!/bin/sh
-cd /home/ubuntu/ezops-test-hery
+cd /home/santos/scripts/ezops-test-hery
 
 # GET FILES IN DEVOPS FOLDER
 DEVOPS_FILES=$(ls -ap devops | grep -v /) # This command list all não directories inside the folder "ls -ap devops | grep -v /"
@@ -16,8 +16,12 @@ done
 chmod +x build.sh
 
 # execute deploy
+echo "Executing test."
 bash test.sh
+
+echo "Recreating container."
 bash build.sh
+
 
 #moving back to devops
 for i in ${DEVOPS_FILES} ; do

@@ -1,8 +1,6 @@
 #!/bin/sh
-echo "Pulling repository"
-#git pull
 echo "Testing ..."
-bash test
+bash test.sh
 echo "Stoping container"
 docker container stop node-container
 echo "Removing container"
