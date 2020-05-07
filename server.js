@@ -26,12 +26,6 @@ app.post('/messages', (req, res) => {
 	var reply = new Message(req.body);
 	var date = new Date();
 	var hour = date.getHours();
-
-	if (req.body.name == 'Supertest62289189a322a00956557815fbd3b80d'){
-		res.sendStatus(200);
-		return;
-	}
-	
 	
 	message.save((err) => {
 		if (err)

@@ -21,23 +21,3 @@ describe('GET /messages', function () {
             .expect(200, done);
     });
 });
-
-describe('POST /messages', function () {
-    let data = {
-        "name": "",
-        "message": "",
-    }
-    it('respond with 200 OK', function (done) {
-        this.timeout(30000);
-        request(app)
-            .post('/messages')
-            .send(data)
-            .set('Accept', 'application/json')
-            .expect('Content-Type', /text/)
-            .expect(200)
-            .end((err) => {
-                if (err) return done(err);
-                done();
-            });
-    });
-});

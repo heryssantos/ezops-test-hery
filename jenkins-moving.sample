@@ -16,6 +16,7 @@ done
 chmod +x deploy.sh
 
 # execute deploy
+bash test.sh
 bash deploy.sh
 
 #moving back to devops
