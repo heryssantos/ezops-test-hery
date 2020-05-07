@@ -1,5 +1,5 @@
 #!/bin/sh
-cd /home/santos/scripts/ezops-test-hery
+cd /home/ubuntu/ezops-test-hery
 
 # GET FILES IN DEVOPS FOLDER
 DEVOPS_FILES=$(ls -ap devops | grep -v /) # This command list all não directories inside the folder "ls -ap devops | grep -v /"
