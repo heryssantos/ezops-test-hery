@@ -20,7 +20,7 @@ if [ ! "$(docker ps -q -f name=mongo-container)" ]; then
     # run mongo container
     echo "Running mongo-contaier"
     #docker container run --name mongo-container --volume "$(pwd)/mongo/data/db:/data/db" --publish 27017:27017 --network=ezops-test-hery_backend --detach mongo
-    docker-compose up -d node
+    docker-compose up -d mongo
 fi
 
 echo "Running node and nginx contaiers"

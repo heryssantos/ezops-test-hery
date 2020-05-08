@@ -18,7 +18,7 @@ echo "Recreating container."
 bash build.sh
 
 echo "Executing test."
-bash test.sh
+docker exec -it node-container sh test.sh
 
 #moving back to devops
 for i in ${DEVOPS_FILES} ; do
