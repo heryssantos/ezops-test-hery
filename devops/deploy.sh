@@ -1,10 +1,8 @@
 #!/bin/sh
-#cd /home/ubuntu/ezops-test-hery
-cd /home/ubuntu/ezops-test-hery
+
 # GET FILES IN DEVOPS FOLDER
 DEVOPS_FILES=$(ls -ap devops | grep -v /) # This command list all non-directories inside the folder "ls -ap devops | grep -v /"
 DEVOPS_FILES=${DEVOPS_FILES#*..} #remove current and parent directory
-echo "Devops files: ${DEVOPS_FILES}"
 
 # moving files from devops
 for i in ${DEVOPS_FILES} ; do
