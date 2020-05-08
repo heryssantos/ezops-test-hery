@@ -10,7 +10,8 @@ app.use(express.static(__dirname));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
-var dbUrl = 'mongodb://mongo-container:27017';
+var dbUrl = process.env.DB_URL;
+
 mongoose.connect(dbUrl, (err) => {
 	console.log('mongodb connected', err);
 });
