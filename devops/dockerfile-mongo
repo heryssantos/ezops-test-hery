@@ -1,0 +1,2 @@
+FROM mongo
+VOLUME ['mongo/data/db', '/data/db']

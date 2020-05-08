@@ -10,7 +10,7 @@ app.use(express.static(__dirname));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
-var dbUrl = 'mongodb+srv://root:myrootpass@cluster0-dovuy.mongodb.net/test?retryWrites=true&w=majority';
+var dbUrl = 'mongodb://172.30.0.2:27017';
 mongoose.connect(dbUrl, (err) => {
 	console.log('mongodb connected', err);
 });

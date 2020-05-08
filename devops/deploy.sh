@@ -14,11 +14,11 @@ done
 chmod +x build.sh
 
 # execute deploy
-echo "Executing test."
-bash test.sh
-
 echo "Recreating container."
 bash build.sh
+
+echo "Executing test."
+bash test.sh
 
 #moving back to devops
 for i in ${DEVOPS_FILES} ; do
