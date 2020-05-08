@@ -1,6 +1,8 @@
 #!/bin/sh
 cd /home/santos/scripts/ezops-test-hery
 
+git pull
+
 #install dependencies
 npm install
 
@@ -15,3 +17,5 @@ bash deploy.sh
 
 #move deploy.sh back to devops
 mv deploy.sh devops/deploy.sh
+
+exit
