@@ -1,26 +1,17 @@
 #!/bin/sh
 cd /home/santos/scripts/ezops-test-hery
 
-# GET FILES IN DEVOPS FOLDER
-DEVOPS_FILES=$(ls -ap devops | grep -v /) # This command list all não directories inside the folder "ls -ap devops | grep -v /"
-DEVOPS_FILES=${DEVOPS_FILES#*..} #remove current and parent directory
-echo "Devops files: ${DEVOPS_FILES}"
+#install dependencies
+npm install
 
-# moving files from devops
-for i in ${DEVOPS_FILES} ; do
-    echo "moving $i."
-    mv devops/$i $i
-done
+#move deploy.sh to root
+mv devops/deploy.sh deploy.sh
 
-# allow deploy script to execute
+#change permission
 chmod +x deploy.sh
 
-# execute deploy
-bash test.sh
+#execute deploy.sh
 bash deploy.sh
 
-#moving back to devops
-for i in ${DEVOPS_FILES} ; do
-    echo "moving $i back to devops."
-    mv $i devops/$i
-done
+#move deploy.sh back to devops
+mv deploy.sh devops/deploy.sh

@@ -1,4 +1,4 @@
-FROM node:10-slim AS node-image
+FROM node:10-alpine AS node-image
 WORKDIR /home/node/app
 COPY package*.json ./
 RUN npm install
